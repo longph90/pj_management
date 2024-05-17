@@ -1,0 +1,24 @@
+{% extends "master.html" %} {% block title %} Member List {% endblock title %}
+{% block content %}
+<h1>Member List</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fullname</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for member in members %}
+    <tr>
+      <th scope="row">
+        <a href="details/{{ member.id }}">{{ member.id }} </a>
+      </th>
+      <td>{{ member.fullname }}</td>
+      <td>{{ member.email }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
